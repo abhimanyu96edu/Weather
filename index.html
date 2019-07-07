@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather</title>
+</head>
+
+<body>
+    <div class="weather-container">
+        <div class="location">
+            <div class="location-timezone">Timezone</div>
+            <canvas class="icon" width="128" height="128"></canvas>
+        </div>
+        <div class="temperature">
+            <div class="temperature-degree-section">
+                <h1 class="temperature-degree"></h1>
+                <span class="temperature-unit">°F</span>
+            </div>
+            <div class="temperature-description">Loading...</div>
+        </div>
+    </div>
+
+
+
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Enter City Name" id="searchInput">
+        <button class="search-button" id="searchBtn">Search</button>
+    </div>
+    <div class="search-weather-container">
+        <div class="search-location">
+            <div class="search-location-timezone">Timezone</div>
+            <div class="search-result-image-div">
+                <img class="search-result-img" width="100px" height="100px">
+            </div>
+        </div>
+        <div class="search-temperature">
+            <div class="search-temperature-degree-section">
+                <h1 class="search-temperature-degree">0</h1>
+                <span class="search-temperature-unit">°F</span>
+            </div>
+            <div class="search-temperature-description">Loading...</div>
+        </div>
+    </div>
+
+    <script src="skycons.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /*background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));*/
+    background: linear-gradient(rgb(32, 32, 32), rgb(96, 96, 96));
+    font-family: sans-serif;
+    color: white;
+}
+
+.location,
+.temperature {
+    height: 30vh;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.location-timezone {
+    font-size: 30px;
+    margin: 10px;
+}
+
+.temperature {
+    flex-direction: column;
+}
+
+.temperature-degree-section {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.temperature-degree {
+    margin: 10px;
+    font-size: 30px;
+}
+
+.temperature-unit {
+    font-size: 30px;
+}
+
+.temperature-description {
+    margin: 10px;
+    font-size: 30px;
+}
+
+.weather-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 1px 5px black;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.search-weather-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 1px 5px black;
+    padding: 50px;
+    border-radius: 10px;
+    visibility: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.search-container {
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px;
+}
+
+.search-container input {
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 1px 2px black;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+}
+
+.search-container button {
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 1px 2px black;
+    width: 75px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+}
+
+.search-temperature,
+.search-location {
+    height: 30vh;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.search-location-timezone {
+    font-size: 30px;
+    margin: 10px;
+}
+
+.search-temperature {
+    flex-direction: column;
+}
+
+.search-temperature-degree-section {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search-temperature-degree {
+    margin: 10px;
+    font-size: 30px;
+}
+
+.search-temperature-unit {
+    font-size: 30px;
+}
+
+.search-temperature-description {
+    margin: 10px;
+    font-size: 30px;
+}
