@@ -1,23 +1,4 @@
-function addLoadEvent(func) {
-    var oldonload = window.onload;
-    if (typeof window.onload != 'function') {
-        window.onload = func;
-    } else {
-        window.onload = function() {
-            if (oldonload) {
-                oldonload();
-            }
-            func();
-        }
-    }
-}
-
-addLoadEvent(a);
-addLoadEvent(function() {
-    /* more code to run on page load */
-
-
-});
+window.addEventListener("load", deafaultWeather());
 
 document.getElementById("searchBtn").addEventListener("click", () => {
     const searchTerm = document.querySelector(".search-input").value;
@@ -25,7 +6,7 @@ document.getElementById("searchBtn").addEventListener("click", () => {
         searchWeather(searchTerm);
 });
 
-function a() {
+function deafaultWeather() {
     let long;
     let lat;
     //let temperature = document.querySelector(".temperature");
@@ -123,7 +104,7 @@ function init(resultFromServer) {
             break;
 
         case "Snow":
-            //document.querySelector(".search-weather-container").style.background = "black";
+            document.querySelector(".search-weather-container").style.backgroundImage = 'url("rain.jpg")';
             break;
 
         default:
