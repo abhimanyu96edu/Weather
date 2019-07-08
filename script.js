@@ -1,4 +1,31 @@
-window.addEventListener('load', () => {
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function() {
+            if (oldonload) {
+                oldonload();
+            }
+            func();
+        }
+    }
+}
+
+addLoadEvent(a);
+addLoadEvent(function() {
+    /* more code to run on page load */
+
+
+});
+
+document.getElementById("searchBtn").addEventListener("click", () => {
+    const searchTerm = document.querySelector(".search-input").value;
+    if (searchTerm)
+        searchWeather(searchTerm);
+});
+
+function a() {
     let long;
     let lat;
     //let temperature = document.querySelector(".temperature");
@@ -49,23 +76,21 @@ window.addEventListener('load', () => {
     } else {
         h1.textContent = "Geolocation is not supported by this browser.";
     }
+}
 
-    function setIcon(icon, iconID) {
-        const skycons = new Skycons({ "color": "white" });
-        const currentIcon = icon.replace(/-/g, "_").toUpperCase();
-        skycons.play();
-        return skycons.set(iconID, Skycons[currentIcon]);
-    }
+function setIcon(icon, iconID) {
+    const skycons = new Skycons({ "color": "white" });
+    const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+    skycons.play();
+    return skycons.set(iconID, Skycons[currentIcon]);
+}
 
-    function changeDegree(temperature) {
-        return Math.floor((temperature - 32) * (5 / 9));
-    }
-});
-
-let apiKey = "58260e131217f2e5d931c0d95881b39e";
+function changeDegree(temperature) {
+    return Math.floor((temperature - 32) * (5 / 9));
+}
 
 function searchWeather(searchTerm) {
-
+    let apiKey = "58260e131217f2e5d931c0d95881b39e";
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&APPID=${apiKey}`)
         .then(response => {
             return response.json();
@@ -141,10 +166,3 @@ function init(resultFromServer) {
 function changeDegreeKelvin(temperature) {
     return Math.floor((temperature - 32) * (5 / 9));
 }
-
-
-document.getElementById("searchBtn").addEventListener("click", () => {
-    const searchTerm = document.querySelector(".search-input").value;
-    if (searchTerm)
-        searchWeather(searchTerm);
-});

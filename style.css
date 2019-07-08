@@ -9,7 +9,7 @@ body {
     justify-content: space-around;
     align-items: center;
     /*background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));*/
-    background: linear-gradient(rgb(32, 32, 32), rgb(96, 96, 96));
+    background: linear-gradient(rgb(100, 100, 100), rgb(0, 51, 77));
     font-family: sans-serif;
     color: white;
 }
@@ -143,4 +143,10 @@ body {
 .search-temperature-description {
     margin: 10px;
     font-size: 30px;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
