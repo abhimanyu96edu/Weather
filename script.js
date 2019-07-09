@@ -122,7 +122,8 @@ function init(resultFromServer) {
     let weatherIcon = document.querySelector(".search-result-img");
     let weatherContainer = document.querySelector(".search-weather-container");
 
-    weatherIcon.src = "http://openweathermap.org/img/wn/" + resultFromServer.weather[0].icon + ".png";
+    const proxy = "https://cors-anywhere.herokuapp.com/";
+    weatherIcon.src = proxy + "https://openweathermap.org/img/wn/" + resultFromServer.weather[0].icon + ".png";
     let resultDesc = resultFromServer.weather[0].description;
     temperatureDescription.textContent = resultDesc.charAt(0).toUpperCase() + resultDesc.slice(1);
 
