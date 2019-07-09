@@ -74,7 +74,7 @@ function searchWeather(searchTerm) {
     let apiKey = "58260e131217f2e5d931c0d95881b39e";
     const proxy = "https://cors-anywhere.herokuapp.com/";
     
-    fetch(`${proxy}http://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&APPID=${apiKey}`)
+    fetch(`${proxy}https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&APPID=${apiKey}`)
         .then(response => {
             return response.json();
         })
